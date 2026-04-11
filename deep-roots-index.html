@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Deep Roots Foundation — Planting Roots for a Greener Tomorrow</title>
+<meta name="description" content="Deep Roots Foundation is a 501(c)(3) nonprofit planting native trees across Delaware. Founded by a high school student, partnered with DNREC and the Tree for Every Delawarean Initiative."/>
+<link rel="icon" type="image/x-icon" href="dr-favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="dr-favicon-32x32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="dr-apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,700;1,9..144,900&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --forest:#1a3a1a;
+  --pine:#2d5a27;
+  --leaf:#3d8b40;
+  --sage:#5aab5e;
+  --mint:#95d498;
+  --foam:#e0f2e1;
+  --cream:#f8f5ee;
+  --off:#f4f7f4;
+  --white:#ffffff;
+  --ink:#111d11;
+  --body:#3a5040;
+  --muted:#6b8a6e;
+  --border:#d0e4d0;
+  --orange:#e8631a;
+  --fd:'Fraunces',Georgia,serif;
+  --fb:'Nunito Sans',sans-serif;
+  --e:cubic-bezier(.25,.46,.45,.94);
+  --es:cubic-bezier(.34,1.56,.64,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+/* Remove tap highlight flash on iOS */
+a,button{-webkit-tap-highlight-color:transparent}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(22px);transition:opacity .7s var(--e),transform .7s var(--e)}
+.r.v{opacity:1;transform:none}
+.d1{transition-delay:.09s}.d2{transition-delay:.18s}.d3{transition-delay:.27s}.d4{transition-delay:.36s}
+
+/* ══════════ NAV — clean white ══════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3.5rem;
+  height:96px;
+  transition:height .3s var(--e),box-shadow .3s;
+  box-shadow:0 1px 0 rgba(0,0,0,.04);
+}
+nav.s{height:76px;box-shadow:0 2px 20px rgba(0,0,0,.08)}
+
+.nav-left{display:flex;align-items:center}
+.nav-logo{height:80px;width:auto;object-fit:contain;display:block;transition:transform .3s var(--e),height .3s;flex-shrink:0}
+nav.s .nav-logo{height:62px}
+.nav-logo:hover{transform:scale(1.03)}
+
+.nav-right{display:flex;align-items:center;gap:2.4rem}
+.nav-links{display:flex;align-items:center;gap:2.4rem}
+.nav-links a{font-size:.84rem;font-weight:700;color:var(--body);letter-spacing:.01em;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-5px;left:0;right:0;height:2px;background:var(--leaf);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .25s var(--e)}
+.nav-links a:hover{color:var(--leaf)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:var(--leaf);color:#fff;
+  padding:.65rem 1.6rem;border-radius:50px;
+  font-weight:800;font-size:.84rem;letter-spacing:.02em;
+  box-shadow:0 4px 18px rgba(61,139,64,.3);
+  transition:background .2s,transform .2s,box-shadow .2s;
+}
+.nav-cta:hover{background:var(--pine);transform:translateY(-1px);box-shadow:0 8px 24px rgba(61,139,64,.35)}
+.nav-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-ham span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* MOBILE MENU */
+.mob{display:none;position:fixed;inset:0;z-index:950;background:var(--forest);flex-direction:column;align-items:center;justify-content:center;gap:2.2rem}
+.mob.on{display:flex}
+.mob a{font-family:var(--fd);font-size:2rem;font-style:italic;color:rgba(255,255,255,.9);transition:color .2s}
+.mob a:hover{color:var(--mint)}
+.mob-x{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:rgba(255,255,255,.6);font-size:1.8rem;cursor:pointer}
+
+/* ══════════ HERO ══════════ */
+#hero{
+  min-height:100vh;
+  padding:0;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--forest);
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 65% 40%, rgba(90,171,94,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 10% 80%, rgba(45,90,39,.3) 0%, transparent 55%),
+    linear-gradient(160deg,#0d1e0d 0%,#1a3a1a 45%,#1e421e 100%);
+}
+.hero-dots{
+  position:absolute;inset:0;z-index:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:28px 28px;pointer-events:none;
+}
+.hero-topline{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--leaf) 30%,var(--sage) 70%,transparent);z-index:2}
+
+.hero-inner{
+  position:relative;z-index:1;
+  max-width:1200px;width:100%;margin:0 auto;
+  padding:150px 4rem 6rem;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:5rem;
+  align-items:center;
+}
+
+/* LEFT */
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  color:var(--mint);font-size:.72rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;
+  margin-bottom:1.8rem;
+}
+.hero-eyebrow-dot{width:5px;height:5px;background:var(--mint);border-radius:50%;animation:dot 2s infinite}
+@keyframes dot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(2);opacity:.4}}
+h1.hero-h1{
+  font-family:var(--fd);
+  font-size:clamp(3.4rem,5.2vw,6rem);
+  font-weight:900;line-height:.97;
+  color:#fff;
+  margin-bottom:1.8rem;
+  letter-spacing:-.02em;
+}
+h1.hero-h1 em{color:var(--mint);font-style:italic;display:block}
+.hero-sub{
+  font-size:1.06rem;color:rgba(255,255,255,.58);
+  line-height:1.85;max-width:480px;
+  margin-bottom:2.6rem;font-weight:300;
+}
+.hero-btns{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:3.8rem}
+.btn-green{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--leaf);color:#fff;
+  padding:1rem 2.2rem;border-radius:50px;
+  font-weight:800;font-size:.94rem;
+  box-shadow:0 6px 24px rgba(61,139,64,.38);
+  transition:all .2s;letter-spacing:.02em;
+}
+.btn-green:hover{background:var(--pine);transform:translateY(-2px);box-shadow:0 12px 32px rgba(61,139,64,.42)}
+.btn-outline-w{
+  display:inline-flex;align-items:center;gap:.5rem;
+  border:1.5px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);
+  padding:1rem 2.2rem;border-radius:50px;
+  font-weight:600;font-size:.94rem;
+  transition:all .2s;
+}
+.btn-outline-w:hover{border-color:var(--mint);color:var(--mint);background:rgba(255,255,255,.05);transform:translateY(-2px)}
+.hero-trust{
+  display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+  padding-top:2.2rem;border-top:1px solid rgba(255,255,255,.08);
+}
+.hero-trust-item{
+  display:flex;align-items:center;gap:.5rem;
+  font-size:.75rem;color:rgba(255,255,255,.45);font-weight:500;
+  letter-spacing:.03em;
+}
+.trust-dot{width:4px;height:4px;background:var(--sage);border-radius:50%}
+
+/* RIGHT — glass stat card */
+.hero-right{display:flex;align-items:center;justify-content:center}
+.stat-card{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;
+  padding:2.4rem 2.8rem;
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  width:100%;max-width:380px;
+}
+.sc-header{
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.8rem;
+  padding-bottom:1.4rem;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.sc-logo{height:32px;width:auto;max-width:160px;object-fit:contain;flex-shrink:0;filter:brightness(0) invert(1);opacity:.85}
+.sc-title{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.sc-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+.sc-stat-n{font-family:var(--fd);font-weight:900;font-size:2.8rem;color:var(--mint);line-height:1;letter-spacing:-.02em}
+.sc-stat-l{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:.4rem}
+.sc-divider{height:1px;background:rgba(255,255,255,.08);margin-bottom:1.5rem}
+.sc-items{display:flex;flex-direction:column;gap:.75rem}
+.sc-item{display:flex;align-items:center;gap:.65rem;font-size:.8rem;color:rgba(255,255,255,.55);font-weight:400}
+.sc-item-ico{font-size:.9rem;flex-shrink:0}
+
+/* ══════════ MARQUEE ══════════ */
+.mq{background:var(--leaf);overflow:hidden;padding:.85rem 0;display:block;margin:0}
+.mq-t{display:flex;animation:mqanim 28s linear infinite;white-space:nowrap}
+.mq-t span{font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.88);padding:0 2.8rem;font-family:var(--fb)}
+.mq-t .sep{color:rgba(255,255,255,.4)}
+@keyframes mqanim{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ══════════ SHARED ══════════ */
+section{padding:7rem 4rem}
+.wrap{max-width:1200px;margin:0 auto;width:100%}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--leaf);margin-bottom:1rem;
+}
+.eyebrow::before{content:'';display:block;width:20px;height:2px;background:var(--leaf);border-radius:2px}
+h2.sec-h{
+  font-family:var(--fd);font-weight:900;
+  font-size:clamp(2.2rem,3.8vw,3.4rem);
+  line-height:1.06;color:var(--forest);
+  margin-bottom:1rem;letter-spacing:-.02em;
+}
+h2.sec-h em{font-style:italic;color:var(--leaf)}
+p.sec-p{font-size:1.02rem;color:var(--body);line-height:1.85;max-width:540px;font-weight:300}
+
+/* ══════════ WHY TREES (OTP-inspired) ══════════ */
+#why{background:var(--off)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.why-text .sec-p{margin-bottom:2rem}
+.why-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.why-card{
+  background:var(--white);border-radius:16px;
+  padding:1.6rem 1.4rem;
+  border:1px solid var(--border);
+  transition:transform .3s var(--es),box-shadow .3s,border-color .3s;
+}
+.why-card:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(26,58,26,.1);border-color:var(--leaf)}
+.why-card-ico{font-size:1.8rem;margin-bottom:.7rem}
+.why-card-t{font-family:var(--fd);font-weight:700;font-size:.98rem;color:var(--forest);margin-bottom:.35rem;letter-spacing:-.01em}
+.why-card-d{font-size:.84rem;color:var(--muted);line-height:1.65}
+
+/* ══════════ HOW IT WORKS ══════════ */
+#how{background:var(--white)}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end;margin-bottom:5rem}
+.steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;position:relative}
+.steps-row::before{
+  content:'';position:absolute;
+  top:2.8rem;left:calc(12.5% + 1.5rem);right:calc(12.5% + 1.5rem);
+  height:1.5px;
+  background:linear-gradient(90deg,var(--foam),var(--mint),var(--sage),var(--leaf));
+  z-index:0;
+}
+.step{
+  background:var(--off);border-radius:18px;
+  padding:1.8rem 1.3rem 1.6rem;
+  border:1.5px solid var(--border);
+  text-align:center;position:relative;z-index:1;
+  transition:transform .3s var(--es),box-shadow .3s,border-color .3s;
+}
+.step:hover{transform:translateY(-7px);box-shadow:0 16px 44px rgba(26,58,26,.1);border-color:var(--leaf)}
+.step-num{
+  width:50px;height:50px;background:var(--forest);color:#fff;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--fd);font-weight:900;font-size:1.3rem;
+  margin:0 auto 1.1rem;
+  box-shadow:0 4px 14px rgba(26,58,26,.3);border:3px solid var(--off);
+}
+.step-ico{font-size:2rem;margin-bottom:.75rem}
+.step-t{font-family:var(--fd);font-weight:800;font-size:.98rem;color:var(--forest);margin-bottom:.45rem;letter-spacing:-.01em}
+.step-d{font-size:.84rem;color:var(--body);line-height:1.65}
+
+/* ══════════ IMPACT — dark ══════════ */
+#impact{
+  background:var(--forest);position:relative;overflow:hidden;padding:8rem 4rem;
+}
+#impact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 60% 50%,rgba(90,171,94,.12) 0%,transparent 60%)}
+#impact .eyebrow{color:var(--mint);justify-content:center;margin-bottom:1rem}
+#impact .eyebrow::before{background:var(--mint)}
+#impact h2.sec-h{color:#fff;text-align:center}
+#impact .sec-p{color:rgba(255,255,255,.48);text-align:center;margin:.8rem auto 4rem}
+.impact-nums{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:rgba(255,255,255,.07);border-radius:14px;overflow:hidden;
+  margin-bottom:4rem;position:relative;z-index:1;
+}
+.imp-n-card{background:rgba(0,0,0,.18);padding:2.8rem 2rem;text-align:center;transition:background .3s}
+.imp-n-card:hover{background:rgba(90,171,94,.14)}
+.imp-big{font-family:var(--fd);font-weight:900;font-size:3.8rem;color:var(--mint);line-height:1;letter-spacing:-.03em}
+.imp-lbl{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:.65rem}
+.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;position:relative;z-index:1}
+.ben{
+  border:1px solid rgba(255,255,255,.08);border-radius:14px;
+  padding:2rem 1.8rem;
+  transition:background .3s,border-color .3s,transform .3s var(--e);
+}
+.ben:hover{background:rgba(90,171,94,.1);border-color:rgba(90,171,94,.2);transform:translateY(-4px)}
+.ben-ico{width:48px;height:48px;border-radius:12px;background:rgba(90,171,94,.15);border:1px solid rgba(90,171,94,.25);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.2rem}
+.ben-t{font-family:var(--fd);font-weight:700;font-size:1.02rem;color:#fff;margin-bottom:.45rem;letter-spacing:-.01em}
+.ben-d{font-size:.86rem;color:rgba(255,255,255,.48);line-height:1.72}
+
+/* ══════════ EVENTS ══════════ */
+#events{background:var(--cream)}
+.events-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3.5rem}
+.events-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.ev{
+  border-radius:16px;overflow:hidden;
+  border:1px solid var(--border);
+  background:var(--white);
+  transition:transform .3s var(--es),box-shadow .3s;
+  display:flex;flex-direction:column;
+}
+.ev:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(26,58,26,.12)}
+
+/* image area — fixed height, always covers full box */
+.ev-img-wrap{
+  position:relative;
+  height:280px;
+  overflow:hidden;
+  flex-shrink:0;
+}
+.ev-img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 30%;
+  display:block;
+  transition:transform .5s var(--e);
+}
+.ev:hover .ev-img{transform:scale(1.04)}
+
+/* CSS illustrated card image area */
+.ev-hero-img{
+  height:280px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:.6rem;
+  position:relative;overflow:hidden;
+  flex-shrink:0;
+}
+
+/* chip overlay on image */
+.ev-img-chip{
+  position:absolute;top:1rem;left:1rem;
+  background:rgba(26,58,26,.75);
+  color:#fff;font-size:.62rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:.3rem .85rem;border-radius:50px;
+  backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.15);
+}
+
+.ev-body{padding:1.5rem 1.8rem 1.8rem;flex:1}
+.ev-meta{display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem}
+.ev-date{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf)}
+.ev-dot{width:3px;height:3px;background:var(--border);border-radius:50%}
+.ev-place{font-size:.68rem;color:var(--muted);letter-spacing:.06em}
+.ev-t{font-family:var(--fd);font-weight:800;font-size:1.08rem;color:var(--forest);margin-bottom:.45rem;letter-spacing:-.01em}
+.ev-d{font-size:.86rem;color:var(--body);line-height:1.65}
+.ev-chip{display:none} /* replaced by ev-img-chip overlay */
+
+/* ══════════ ABOUT / FOUNDER ══════════ */
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-left{}
+.quote-block{
+  background:var(--off);border-radius:16px;
+  padding:2.8rem;border-left:4px solid var(--leaf);
+  margin-bottom:1.5rem;
+}
+.qmark{font-family:var(--fd);font-size:5rem;line-height:.6;color:var(--leaf);opacity:.25;margin-bottom:-.4rem}
+.qtext{font-family:var(--fd);font-size:1.1rem;font-style:italic;color:var(--forest);line-height:1.78;margin-bottom:1.8rem}
+.qauthor{display:flex;align-items:center;gap:.9rem}
+.qa-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--leaf),var(--sage));display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.qa-name{font-family:var(--fd);font-weight:800;font-size:.98rem;color:var(--forest)}
+.qa-title{font-size:.74rem;color:var(--muted);margin-top:.1rem}
+.cred-box{background:var(--forest);border-radius:14px;padding:2rem;color:#fff}
+.cred-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:1rem}
+.cred-list{display:flex;flex-direction:column;gap:.8rem}
+.cred-item{display:flex;align-items:center;gap:.75rem;font-size:.86rem;color:rgba(255,255,255,.62)}
+.cred-ico{font-size:.95rem;flex-shrink:0}
+.about-right{}
+.about-feats{display:flex;flex-direction:column;gap:1.4rem;margin-top:2.4rem}
+.af{display:flex;align-items:flex-start;gap:1rem}
+.af-check{width:26px;height:26px;flex-shrink:0;background:var(--foam);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--leaf);font-size:.8rem;font-weight:800;margin-top:.1rem}
+.af-text{font-size:.94rem;color:var(--body);line-height:1.68}
+.af-text strong{color:var(--forest);font-weight:700}
+
+/* ══════════ DONATE ══════════ */
+#donate{background:var(--off)}
+.donate-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.donate-opts{display:flex;flex-direction:column;gap:1rem;margin-top:2.4rem}
+.d-opt{
+  display:flex;align-items:center;gap:1.2rem;
+  background:var(--white);border-radius:14px;
+  padding:1.4rem 1.8rem;
+  border:1.5px solid var(--border);
+  transition:border-color .2s,transform .2s var(--e);
+}
+.d-opt:hover{border-color:var(--leaf);transform:translateX(5px)}
+.d-ico{width:42px;height:42px;border-radius:10px;background:var(--foam);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.d-name{font-family:var(--fd);font-weight:800;font-size:.98rem;color:var(--forest)}
+.d-sub{font-size:.8rem;color:var(--muted);margin-top:.1rem}
+.d-arrow{margin-left:auto;color:var(--leaf);font-size:1rem}
+
+.donate-box{background:var(--forest);border-radius:20px;padding:2.8rem;color:#fff;position:sticky;top:90px}
+.db-t{font-family:var(--fd);font-weight:900;font-size:1.9rem;margin-bottom:.5rem;letter-spacing:-.02em}
+.db-s{font-size:.92rem;color:rgba(255,255,255,.48);margin-bottom:1.8rem;line-height:1.65}
+.db-btn{
+  display:flex;align-items:center;gap:1rem;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:.8rem;
+  transition:background .2s,transform .2s;
+}
+.db-btn:hover{background:rgba(90,171,94,.18);transform:translateX(3px)}
+.db-btn-ico{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.db-btn-name{font-weight:700;font-size:.92rem}
+.db-btn-sub{font-size:.74rem;color:rgba(255,255,255,.4);margin-top:.1rem}
+.db-btn-arr{margin-left:auto;color:var(--mint);opacity:.7}
+.db-note{font-size:.72rem;color:rgba(255,255,255,.26);text-align:center;margin-top:1.2rem;line-height:1.6}
+
+/* ══════════ FAQ ══════════ */
+#faq{background:var(--white)}
+.faq-grid{display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start}
+.faq-left{position:sticky;top:90px}
+.faq-items{display:flex;flex-direction:column}
+.fi{border-bottom:1px solid var(--border)}
+.fq{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.25rem 0;cursor:pointer;
+  font-weight:600;font-size:.94rem;color:var(--forest);gap:1rem;
+  transition:color .2s;
+}
+.fq:hover{color:var(--leaf)}
+.fchev{width:24px;height:24px;flex-shrink:0;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--muted);transition:transform .3s,background .3s,border-color .3s}
+.fi.open .fchev{transform:rotate(180deg);background:var(--leaf);border-color:var(--leaf);color:#fff}
+.fa{max-height:0;overflow:hidden;transition:max-height .4s var(--e)}
+.fi.open .fa{max-height:200px}
+.fai{padding:0 0 1.2rem;font-size:.9rem;color:var(--body);line-height:1.78}
+
+/* ══════════ CTA ══════════ */
+#cta{
+  background:var(--leaf);padding:7rem 4rem;
+  text-align:center;position:relative;overflow:hidden;
+}
+#cta::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:24px 24px}
+.cta-wrap{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.cta-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:1.2rem}
+.cta-h{font-family:var(--fd);font-weight:900;font-size:clamp(2.8rem,4.5vw,4.5rem);color:#fff;margin-bottom:1.1rem;line-height:.98;letter-spacing:-.02em}
+.cta-h em{font-style:italic}
+.cta-p{font-size:1.04rem;color:rgba(255,255,255,.68);margin-bottom:2.6rem;line-height:1.75;font-weight:300}
+.cta-btns{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+.btn-cta-w{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:var(--forest);padding:1rem 2.4rem;border-radius:50px;font-weight:800;font-size:.92rem;transition:all .2s;box-shadow:0 6px 24px rgba(0,0,0,.15)}
+.btn-cta-w:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.2)}
+.btn-cta-o{display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid rgba(255,255,255,.4);color:#fff;padding:1rem 2.4rem;border-radius:50px;font-weight:600;font-size:.92rem;transition:all .2s}
+.btn-cta-o:hover{border-color:#fff;background:rgba(255,255,255,.1);transform:translateY(-2px)}
+
+/* ══════════ FOOTER ══════════ */
+footer{background:var(--forest);padding:5rem 4rem 2.5rem}
+.ft-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.ft-logo{height:44px;width:auto;object-fit:contain;margin-bottom:1.2rem;filter:brightness(0) invert(1);opacity:.7}
+.ft-desc{font-size:.86rem;color:rgba(255,255,255,.3);line-height:1.75;max-width:260px}
+.ft-col-t{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.26);margin-bottom:1.2rem}
+.ft-col-l{display:flex;flex-direction:column;gap:.75rem}
+.ft-col-l a{font-size:.88rem;color:rgba(255,255,255,.42);transition:color .2s}
+.ft-col-l a:hover{color:var(--mint)}
+.ft-bot{max-width:1200px;margin:2rem auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft-bot p{font-size:.78rem;color:rgba(255,255,255,.2)}
+.ft-bot a{color:rgba(255,255,255,.3);transition:color .2s}
+.ft-bot a:hover{color:var(--mint)}
+.ht{color:var(--mint)}
+
+/* ══════════ SOCIAL ICONS ══════════ */
+.social-icon{
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(63,139,64,.08);border:1px solid var(--border);
+  display:inline-flex;align-items:center;justify-content:center;
+  color:var(--leaf);font-size:.82rem;font-weight:800;
+  transition:background .2s,border-color .2s,transform .2s;
+  flex-shrink:0;
+}
+.social-icon:hover{background:var(--leaf);border-color:var(--leaf);color:#fff;transform:translateY(-2px)}
+.ft-social{display:flex;gap:.7rem;margin-top:1.2rem}
+.ft-social .social-icon{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.55)}
+.ft-social .social-icon:hover{background:var(--leaf);border-color:var(--leaf);color:#fff}
+
+/* ══════════ RESPONSIVE ══════════ */
+@media(max-width:1024px){
+  nav,nav.s{padding:0 1.8rem;height:72px}
+  .nav-logo{height:50px}
+  nav.s .nav-logo{height:42px}
+  .nav-links{display:none}
+  .nav-ham{display:flex}
+  section{padding:5.5rem 1.8rem}
+  #hero .hero-inner{grid-template-columns:1fr;padding:100px 1.8rem 4rem;gap:3rem}
+  .hero-right{display:none}
+  .why-grid,.how-grid,.events-header,.about-grid,.donate-grid,.faq-grid{grid-template-columns:1fr;gap:3rem}
+  #contact .wrap>div{grid-template-columns:1fr!important;gap:2rem}
+  .impact-nums{grid-template-columns:1fr 1fr}
+  .ben-grid{grid-template-columns:1fr 1fr}
+  .steps-row{grid-template-columns:1fr 1fr}
+  .steps-row::before{display:none}
+  .faq-left{position:static}
+  .ft-grid{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .donate-box{position:static}
+}
+@media(max-width:640px){
+  h1.hero-h1{font-size:2.8rem}
+  .hero-btns{flex-direction:column;align-items:flex-start}
+  .hero-trust{gap:.6rem}
+  .why-cards,.ben-grid{grid-template-columns:1fr}
+  .steps-row{grid-template-columns:1fr}
+  .impact-nums{grid-template-columns:1fr 1fr}
+  .events-grid{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .ft-grid{grid-template-columns:1fr}
+  .ft-bot{flex-direction:column;text-align:center}
+  section{padding:4rem 1.2rem}
+  .stat-card{padding:1.8rem 1.4rem}
+}
+@media(max-width:375px){
+  h1.hero-h1{font-size:2.4rem}
+  h2.sec-h{font-size:2rem}
+  .nav-logo{height:42px}
+  .ben-grid{grid-template-columns:1fr}
+  .impact-nums{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mob" id="mob">
+  <button class="mob-x" id="mobx">✕</button>
+  <a href="#why" onclick="cM()">Why Trees?</a>
+  <a href="#how" onclick="cM()">How It Works</a>
+  <a href="#events" onclick="cM()">Our Work</a>
+  <a href="#about" onclick="cM()">About Us</a>
+  <a href="#donate" onclick="cM()">Donate</a>
+  <a href="#contact" onclick="cM()">Contact</a>
+  <a href="#donate" onclick="cM()" style="background:var(--leaf);color:#fff;padding:.7rem 2rem;border-radius:50px;font-size:.88rem;font-weight:800;margin-top:.5rem">🌱 Plant a Tree</a>
+</div>
+
+<!-- NAV — white background -->
+<nav id="nav">
+  <div class="nav-left">
+    <a href="#hero">
+      <img src="deep-roots-logo-color.png" alt="Deep Roots Foundation" class="nav-logo"/>
+    </a>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#why">Why Trees?</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#events">Our Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#donate">Donate</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://www.facebook.com/thedeeproots.org" target="_blank" rel="noopener" class="social-icon" title="Follow us on Facebook">f</a>
+    <a href="#donate" class="nav-cta">🌱 Plant a Tree</a>
+  </div>
+  <button class="nav-ham" id="ham"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-topline"></div>
+  <div class="hero-inner">
+    <!-- LEFT -->
+    <div>
+      <div class="hero-eyebrow"><div class="hero-eyebrow-dot"></div>Delaware · 501(c)(3) Nonprofit · Founded Earth Day 2024</div>
+      <h1 class="hero-h1">Planting Roots<em>for a Greener<br>Tomorrow.</em></h1>
+      <p class="hero-sub">We plant native trees across Delaware to fight climate change, restore habitats, and build greener communities — one tree at a time. Founded by a high school student who believed real action starts now.</p>
+      <div class="hero-btns">
+        <a href="#donate" class="btn-green">🌱 Plant a Tree</a>
+        <a href="#how" class="btn-outline-w">See How It Works</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item"><div class="trust-dot"></div>Registered 501(c)(3)</div>
+        <div class="hero-trust-item"><div class="trust-dot"></div>DNREC Partner</div>
+        <div class="hero-trust-item"><div class="trust-dot"></div>TEDI Initiative</div>
+        <div class="hero-trust-item"><div class="trust-dot"></div>Delaware Youth Summit</div>
+      </div>
+    </div>
+    <!-- RIGHT — stat card -->
+    <div class="hero-right">
+      <div class="stat-card">
+        <div class="sc-header">
+          <div style="font-family:var(--fd);font-weight:900;font-size:1.3rem;color:#fff;letter-spacing:.02em;text-transform:uppercase">Our Impact So Far</div>
+        </div>
+        <div class="sc-stats">
+          <div>
+            <div class="sc-stat-n" data-count="115">0</div>
+            <div class="sc-stat-l">Trees Planted</div>
+          </div>
+          <div>
+            <div class="sc-stat-n" data-count="3">0</div>
+            <div class="sc-stat-l">Planting Events</div>
+          </div>
+          <div>
+            <div class="sc-stat-n" data-count="450">0</div>
+            <div class="sc-stat-l">Funds Raised $</div>
+          </div>
+          <div>
+            <div class="sc-stat-n">0</div>
+            <div class="sc-stat-l">Trees Lost</div>
+          </div>
+        </div>
+        <div class="sc-divider"></div>
+        <div class="sc-items">
+          <div class="sc-item"><div class="sc-item-ico">✅</div>Registered 501(c)(3) Federal Nonprofit</div>
+          <div class="sc-item"><div class="sc-item-ico">🌿</div>DNREC — Delaware Natural Resources Partner</div>
+          <div class="sc-item"><div class="sc-item-ico">🌳</div>Supporting TEDI — Tree for Every Delawarean</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq" aria-hidden="true">
+  <div class="mq-t">
+    <span>Planting Roots for a Greener Tomorrow</span><span class="sep">✦</span>
+    <span>Deep Roots Foundation</span><span class="sep">✦</span>
+    <span>501(c)(3) Nonprofit · Delaware</span><span class="sep">✦</span>
+    <span>115+ Trees Planted</span><span class="sep">✦</span>
+    <span>DNREC Partner</span><span class="sep">✦</span>
+    <span>TEDI Initiative</span><span class="sep">✦</span>
+    <span>Now Collecting at Hockessin Athletic Club</span><span class="sep">✦</span>
+    <span>Planting Roots for a Greener Tomorrow</span><span class="sep">✦</span>
+    <span>Deep Roots Foundation</span><span class="sep">✦</span>
+    <span>501(c)(3) Nonprofit · Delaware</span><span class="sep">✦</span>
+    <span>115+ Trees Planted</span><span class="sep">✦</span>
+    <span>DNREC Partner</span><span class="sep">✦</span>
+    <span>TEDI Initiative</span><span class="sep">✦</span>
+    <span>Now Collecting at Hockessin Athletic Club</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<!-- WHY TREES (OTP-inspired) -->
+<section id="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="r">
+        <div class="eyebrow">Why Trees?</div>
+        <h2 class="sec-h">Trees Are One of<br><em>Nature's Best Tools</em></h2>
+        <p class="sec-p">Planting trees is one of the most powerful and cost-effective ways to fight climate change, protect biodiversity, and improve quality of life for communities across Delaware and beyond.</p>
+        <br/><br/>
+        <p class="sec-p" style="font-style:italic;color:var(--muted)">"A society grows great when old men plant trees whose shade they know they shall never sit in." — Greek Proverb</p>
+      </div>
+      <div class="why-cards r d1">
+        <div class="why-card r">
+          <div class="why-card-ico">💨</div>
+          <div class="why-card-t">Cleaner Air</div>
+          <div class="why-card-d">A single tree absorbs up to 48 lbs of CO₂ per year and filters harmful particulates from the air.</div>
+        </div>
+        <div class="why-card r d1">
+          <div class="why-card-ico">🦋</div>
+          <div class="why-card-t">Biodiversity</div>
+          <div class="why-card-d">Native trees support hundreds of species of birds, insects, and mammals — restoring Delaware's ecosystems.</div>
+        </div>
+        <div class="why-card r d2">
+          <div class="why-card-ico">💧</div>
+          <div class="why-card-t">Water & Soil</div>
+          <div class="why-card-d">Tree roots stabilize soil, reduce erosion, and slow water runoff — protecting Delaware's waterways.</div>
+        </div>
+        <div class="why-card r d3">
+          <div class="why-card-ico">🧠</div>
+          <div class="why-card-t">Community Health</div>
+          <div class="why-card-d">Studies show greener neighborhoods have lower rates of stress, anxiety, and depression among residents.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="how-grid">
+      <div class="r">
+        <div class="eyebrow">How It Works</div>
+        <h2 class="sec-h">From Planning<br><em>to Planting</em></h2>
+      </div>
+      <p class="sec-p r d1">We take a structured, community-driven approach — every tree we plant is carefully selected, properly planted, and monitored to ensure it thrives for decades.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step r">
+        <div class="step-num">1</div>
+        <div class="step-ico">📋</div>
+        <div class="step-t">Planning and Organization</div>
+        <div class="step-d">We identify ideal planting locations with DNREC and local partners, selecting native species best suited to each site's soil and conditions.</div>
+      </div>
+      <div class="step r d1">
+        <div class="step-num">2</div>
+        <div class="step-ico">📚</div>
+        <div class="step-t">Education and Training</div>
+        <div class="step-d">Volunteers are trained on proper planting techniques, tree care, and the ecological importance of each native species we plant.</div>
+      </div>
+      <div class="step r d2">
+        <div class="step-num">3</div>
+        <div class="step-ico">🌳</div>
+        <div class="step-t">Tree Planting Event</div>
+        <div class="step-d">Community members come together to plant trees at designated sites across Delaware — from neighborhoods to public roadsides.</div>
+      </div>
+      <div class="step r d3">
+        <div class="step-num">4</div>
+        <div class="step-ico">🔍</div>
+        <div class="step-t">Maintenance and Monitoring</div>
+        <div class="step-d">We revisit every planting site, monitor tree health, and ensure long-term survival to maximize lasting environmental impact.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="wrap">
+    <div class="r" style="text-align:center;margin-bottom:1.5rem">
+      <div class="eyebrow">Our Impact</div>
+      <h2 class="sec-h">Real Trees.<em> Real Change.</em></h2>
+      <p class="sec-p">Every number represents a living tree growing somewhere in Delaware right now — cleaning air, sheltering wildlife, and fighting climate change.</p>
+    </div>
+    <div class="impact-nums">
+      <div class="imp-n-card r"><div class="imp-big" data-count="115">0</div><div class="imp-lbl">Trees Planted</div></div>
+      <div class="imp-n-card r d1"><div class="imp-big" data-count="3">0</div><div class="imp-lbl">Planting Events</div></div>
+      <div class="imp-n-card r d2"><div class="imp-big" data-count="450">0</div><div class="imp-lbl">Funds Raised $</div></div>
+      <div class="imp-n-card r d3"><div class="imp-big">0</div><div class="imp-lbl">Trees Lost</div></div>
+    </div>
+    <div class="ben-grid">
+      <div class="ben r"><div class="ben-ico">💨</div><div class="ben-t">Improves Air Quality</div><div class="ben-d">Trees absorb pollutants and filter particulates out of the air by trapping them on their leaves and bark, creating cleaner air for Delaware communities.</div></div>
+      <div class="ben r d1"><div class="ben-ico">🌍</div><div class="ben-t">Reduces Carbon Footprint</div><div class="ben-d">Trees are effective carbon sinks, absorbing carbon dioxide from the atmosphere and storing it as carbon in their biomass — each mature tree absorbs ~48 lbs of CO₂ per year.</div></div>
+      <div class="ben r d2"><div class="ben-ico">🦋</div><div class="ben-t">Enhances Biodiversity</div><div class="ben-d">Trees provide habitat, food, and protection for a wide variety of animals and plants, increasing ecosystem diversity across Delaware.</div></div>
+      <div class="ben r"><div class="ben-ico">🌡️</div><div class="ben-t">Regulates Climate</div><div class="ben-d">Trees help moderate temperatures by creating a cooling effect through shade and evapotranspiration, reducing the need for air conditioning.</div></div>
+      <div class="ben r d1"><div class="ben-ico">💧</div><div class="ben-t">Controls Water Runoff and Erosion</div><div class="ben-d">Tree roots stabilize the soil and their canopies help reduce runoff during rainfall, preventing erosion and protecting Delaware's waterways.</div></div>
+      <div class="ben r d2"><div class="ben-ico">🧠</div><div class="ben-t">Improves Mental Health</div><div class="ben-d">Areas with more trees have been shown to have lower rates of anxiety, depression, and stress among their populations.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events">
+  <div class="wrap">
+    <div class="events-header">
+      <div class="r">
+        <div class="eyebrow">Our Work</div>
+        <h2 class="sec-h">Where We've<em> Been Planting</em></h2>
+      </div>
+      <p class="sec-p r d1">From a single Earth Day planting to large community events, every milestone represents trees growing across Delaware — and a movement that keeps growing.</p>
+    </div>
+    <div class="events-grid">
+
+      <!-- Card 1: Earth Day — real photo -->
+      <div class="ev r">
+        <div class="ev-img-wrap">
+          <img src="ev1.jpg" alt="Dhruv planting tree on Earth Day 2024" class="ev-img" style="object-position:center 38%"/>
+          <div class="ev-img-chip">Origin Story</div>
+        </div>
+        <div class="ev-body">
+          <div class="ev-meta"><div class="ev-date">Earth Day 2024</div><div class="ev-dot"></div><div class="ev-place">Hockessin, DE</div></div>
+          <div class="ev-t">Earth Day — 10 Trees in My Neighborhood</div>
+          <div class="ev-d">For Earth Day, Dhruv planted 10 trees in his neighborhood in Hockessin, Delaware — the very first Deep Roots planting event that started it all.</div>
+        </div>
+      </div>
+
+      <!-- Card 2: Valley Road — real photo -->
+      <div class="ev r d1">
+        <div class="ev-img-wrap">
+          <img src="ev2.jpg" alt="Dhruv digging at Valley Road 2025" class="ev-img" style="object-position:center 28%"/>
+          <div class="ev-img-chip">Community Event</div>
+        </div>
+        <div class="ev-body">
+          <div class="ev-meta"><div class="ev-date">Spring 2025</div><div class="ev-dot"></div><div class="ev-place">Valley Rd, Hockessin</div></div>
+          <div class="ev-t">45 Trees on Valley Rd, Hockessin DE</div>
+          <div class="ev-d">Planted 45 trees on Valley Rd, Hockessin DE — a major community planting event with DNREC support along one of Hockessin's main corridors.</div>
+        </div>
+      </div>
+
+      <!-- Card 3: Summit Bridge — CSS illustrated -->
+      <div class="ev r d2">
+        <div class="ev-img-wrap">
+          <div class="ev-hero-img" style="background:linear-gradient(160deg,#0a1a0a 0%,#1a4020 45%,#2d6b2d 80%,#5aab5e 100%);">
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);background-size:20px 20px"></div>
+            <div style="font-size:4rem;position:relative;z-index:1;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))">🌲</div>
+            <div style="font-family:var(--fd);font-weight:900;font-size:2.4rem;color:#fff;position:relative;z-index:1;letter-spacing:-.02em;text-shadow:0 2px 12px rgba(0,0,0,.4)">50 Trees</div>
+            <div style="font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);position:relative;z-index:1">Summit Bridge Rd · DE</div>
+          </div>
+          <div class="ev-img-chip">Largest Event</div>
+        </div>
+        <div class="ev-body">
+          <div class="ev-meta"><div class="ev-date">Spring 2025</div><div class="ev-dot"></div><div class="ev-place">Summit Bridge Rd, DE</div></div>
+          <div class="ev-t">50 Trees at Summit Bridge Rd, DE</div>
+          <div class="ev-d">Planted 50 trees at Summit Bridge Rd, DE — our largest single planting event, officially supporting the Tree for Every Delawarean Initiative.</div>
+        </div>
+      </div>
+
+      <!-- Card 4: HAC Shoe Collection — real photo -->
+      <div class="ev r d3">
+        <div class="ev-img-wrap">
+          <img src="ev4.jpg" alt="Deep Roots shoe collection boxes at Hockessin Athletic Club" class="ev-img" style="object-position:center 40%"/>
+          <div class="ev-img-chip">Partnership</div>
+        </div>
+        <div class="ev-body">
+          <div class="ev-meta"><div class="ev-date">Spring 2026</div><div class="ev-dot"></div><div class="ev-place">Hockessin Athletic Club, DE</div></div>
+          <div class="ev-t">Shoe Collection Partnership at HAC</div>
+          <div class="ev-d">Collaborated with a community partner to place shoe collection boxes at Hockessin Athletic Club. Donated sneakers are resold and the proceeds fund native tree planting across Delaware.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="quote-block r">
+          <div class="qmark">"</div>
+          <p class="qtext">Deep Roots began as a simple idea — I saw the need for action in the face of environmental degradation. What started with 10 trees on Earth Day has grown into a community-wide effort. Every tree we plant proves that young people can drive real, lasting change.</p>
+          <div class="qauthor">
+            <div class="qa-avatar">🌳</div>
+            <div>
+              <div class="qa-name">Dhruv Pratapagiri</div>
+              <div class="qa-title">Founder and CEO · Deep Roots Foundation · Tower Hill School in Delaware</div>
+            </div>
+          </div>
+        </div>
+        <div class="cred-box r d1">
+          <div class="cred-label">Credentials & Partnerships</div>
+          <div class="cred-list">
+            <div class="cred-item"><div class="cred-ico">✅</div>Registered 501(c)(3) Federal Nonprofit</div>
+            <div class="cred-item"><div class="cred-ico">🌿</div>DNREC — Delaware Dept. of Natural Resources Partner</div>
+            <div class="cred-item"><div class="cred-ico">🌳</div>TEDI — Tree for Every Delawarean Initiative Supporter</div>
+            <div class="cred-item"><div class="cred-ico">🏆</div>Delaware Youth Environmental Summit — Student Leader</div>
+            <div class="cred-item"><div class="cred-ico">🎓</div>Tower Hill School, Wilmington, Delaware</div>
+          </div>
+        </div>
+      </div>
+      <div class="r d1">
+        <div class="eyebrow">About Deep Roots</div>
+        <h2 class="sec-h">A Student-Founded<br><em>501(c)(3) Nonprofit</em></h2>
+        <p class="sec-p">Deep Roots Foundation was founded by a high school student who believed that environmental action doesn't wait for adulthood. What began in a Delaware neighborhood has grown into a recognized nonprofit partnered with state agencies.</p>
+        <div class="about-feats">
+          <div class="af r d1">
+            <div class="af-check">✓</div>
+            <div class="af-text"><strong>Community-first</strong> — every event is designed to educate, engage, and inspire neighbors, not just add numbers to a count.</div>
+          </div>
+          <div class="af r d2">
+            <div class="af-check">✓</div>
+            <div class="af-text"><strong>Science-driven</strong> — native Delaware species selected with DNREC for maximum ecological impact and long-term survival.</div>
+          </div>
+          <div class="af r d3">
+            <div class="af-check">✓</div>
+            <div class="af-text"><strong>100% transparent</strong> — all donations go directly to tree purchases and planting events. Zero administrative overhead.</div>
+          </div>
+          <div class="af r d4">
+            <div class="af-check">✓</div>
+            <div class="af-text"><strong>Community-funded</strong> — donations from individuals, shoe drives, and community partners go directly to purchasing and planting native Delaware trees.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section id="donate">
+  <div class="wrap">
+    <div class="donate-grid">
+      <div>
+        <div class="r">
+          <div class="eyebrow">Support Our Mission</div>
+          <h2 class="sec-h">Every Dollar<br><em>Plants a Tree</em></h2>
+          <p class="sec-p">Your contribution goes directly to purchasing and planting native Delaware trees. No overhead — just trees in the ground, improving communities for generations.</p>
+        </div>
+        <div class="donate-opts">
+          <a href="https://www.paypal.com/donate/?hosted_button_id=4GSSM6LXRB96L" target="_blank" rel="noopener" class="d-opt r d1">
+            <div class="d-ico">💛</div>
+            <div><div class="d-name">Donate via PayPal</div><div class="d-sub">Quick, secure online donation</div></div>
+            <div class="d-arrow">→</div>
+          </a>
+          <a href="https://account.venmo.com/u/DeepRootsFoundation" target="_blank" rel="noopener" class="d-opt r d2">
+            <div class="d-ico">💙</div>
+            <div><div class="d-name">Donate via Venmo</div><div class="d-sub">@DeepRootsFoundation</div></div>
+            <div class="d-arrow">→</div>
+          </a>
+          <a href="tel:302-333-1331" class="d-opt r d3">
+            <div class="d-ico">🤝</div>
+            <div><div class="d-name">Partner With Us</div><div class="d-sub">Schools, businesses & community orgs welcome</div></div>
+            <div class="d-arrow">→</div>
+          </a>
+          <a href="tel:302-333-1331" class="d-opt r d4">
+            <div class="d-ico">📞</div>
+            <div><div class="d-name">Volunteer With Us</div><div class="d-sub">Call 302-333-1331 to join a planting event</div></div>
+            <div class="d-arrow">→</div>
+          </a>
+        </div>
+      </div>
+      <div class="r d2">
+        <div class="donate-box">
+          <div class="db-t">Donate Today</div>
+          <div class="db-s">Every dollar plants a native tree in a Delaware community. Tax-deductible. 100% to impact.</div>
+          <a href="https://www.paypal.com/donate/?hosted_button_id=4GSSM6LXRB96L" target="_blank" class="db-btn">
+            <div class="db-btn-ico">💛</div>
+            <div><div class="db-btn-name">PayPal</div><div class="db-btn-sub">Secure giving</div></div>
+            <div class="db-btn-arr">→</div>
+          </a>
+          <a href="https://account.venmo.com/u/DeepRootsFoundation" target="_blank" class="db-btn">
+            <div class="db-btn-ico">💙</div>
+            <div><div class="db-btn-name">Venmo</div><div class="db-btn-sub">@DeepRootsFoundation</div></div>
+            <div class="db-btn-arr">→</div>
+          </a>
+          <a href="tel:302-333-1331" class="db-btn">
+            <div class="db-btn-ico">🤝</div>
+            <div><div class="db-btn-name">Partner With Us</div><div class="db-btn-sub">Call 302-333-1331</div></div>
+            <div class="db-btn-arr">→</div>
+          </a>
+          <p class="db-note">Deep Roots Foundation is a registered 501(c)(3).<br/>All donations are fully tax-deductible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="faq-left r">
+        <div class="eyebrow">FAQ</div>
+        <h2 class="sec-h">Got<br><em>Questions?</em></h2>
+        <p class="sec-p">Everything you need to know about tree planting, reforestation, and how to get involved with Deep Roots Foundation.</p>
+        <div style="margin-top:2rem">
+          <a href="tel:302-333-1331" class="btn-green">📞 Call 302-333-1331</a>
+        </div>
+      </div>
+      <div class="faq-items r d1">
+
+        <div class="fi"><div class="fq">Is my donation tax-deductible?<div class="fchev">▾</div></div><div class="fa"><div class="fai">Yes — Deep Roots Foundation is a registered 501(c)(3) Federal Non-Profit Organization. All financial donations are fully tax-deductible. Documentation available upon request.</div></div></div>
+
+        <div class="fi"><div class="fq">How can I get involved or volunteer?<div class="fchev">▾</div></div><div class="fa"><div class="fai">Call us at 302-333-1331 to join a planting event! We welcome volunteers of all ages — no experience needed, just enthusiasm for the environment and community. Every pair of hands makes a difference.</div></div></div>
+
+        <div class="fi"><div class="fq">What is the TEDI Initiative?<div class="fchev">▾</div></div><div class="fa"><div class="fai">TEDI stands for Tree for Every Delawarean Initiative — a Delaware state program aiming to dramatically increase tree canopy coverage statewide. Deep Roots Foundation actively supports this goal through our community planting events across Delaware.</div></div></div>
+
+        <div class="fi"><div class="fq">Can my school or organization host a planting event?<div class="fchev">▾</div></div><div class="fa"><div class="fai">Absolutely! We love partnering with schools, PTAs, civic groups, and businesses. We bring the trees, the training, and the team. Call 302-333-1331 to set up a planting event in your community.</div></div></div>
+
+        <div class="fi"><div class="fq">How do I properly plant a tree?<div class="fchev">▾</div></div><div class="fa"><div class="fai">Dig a hole twice as wide as the root ball but no deeper. Place the tree so the trunk base is level with the soil surface, backfill with native soil, water thoroughly, and mulch around the base without touching the trunk to retain moisture and prevent weeds.</div></div></div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--off);padding:5rem 4rem">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+      <div class="r">
+        <div class="eyebrow">Contact With Us</div>
+        <h2 class="sec-h">Become<em> Our Activist</em></h2>
+        <p class="sec-p">Want to volunteer, partner, or learn more? We'd love to hear from you. Every tree planted starts with a conversation.</p>
+        <div style="margin-top:2.5rem;display:flex;flex-direction:column;gap:1rem">
+          <a href="tel:302-333-1331" style="display:inline-flex;align-items:center;gap:.8rem;font-size:1.1rem;font-weight:700;color:var(--forest)">📞 <span>302-333-1331</span></a>
+          <a href="https://www.facebook.com/thedeeproots.org" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.8rem;font-size:1rem;font-weight:600;color:var(--leaf)">💬 <span>Facebook: /thedeeproots.org</span></a>
+          <a href="https://account.venmo.com/u/DeepRootsFoundation" target="_blank" style="display:inline-flex;align-items:center;gap:.8rem;font-size:1rem;font-weight:600;color:var(--leaf)">💙 <span>Venmo: @DeepRootsFoundation</span></a>
+        </div>
+      </div>
+      <div class="r d1" style="display:flex;flex-direction:column;gap:1rem">
+        <div style="background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:2rem;display:flex;align-items:center;gap:1rem">
+          <div style="font-size:2rem">✅</div>
+          <div>
+            <div style="font-family:var(--fd);font-weight:800;font-size:1rem;color:var(--forest)">501(c)(3) Federal Non-Profit Organization</div>
+            <div style="font-size:.84rem;color:var(--muted);margin-top:.2rem">All donations are fully tax-deductible</div>
+          </div>
+        </div>
+        <div style="background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:2rem;display:flex;align-items:center;gap:1rem">
+          <div style="font-size:2rem">🌿</div>
+          <div>
+            <div style="font-family:var(--fd);font-weight:800;font-size:1rem;color:var(--forest)">Supporting Tree for Every Delawarean Initiative (TEDI)</div>
+            <div style="font-size:.84rem;color:var(--muted);margin-top:.2rem">Official DNREC partner program</div>
+          </div>
+        </div>
+        <div style="background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:2rem;display:flex;align-items:center;gap:1rem">
+          <div style="font-size:2rem">🌳</div>
+          <div>
+            <div style="font-family:var(--fd);font-weight:800;font-size:1rem;color:var(--forest)">Delaware Natural Resources & Environmental Control</div>
+            <div style="font-size:.84rem;color:var(--muted);margin-top:.2rem">DNREC Partner Organization</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-wrap r">
+    <div class="cta-eyebrow">Join the Movement</div>
+    <h2 class="cta-h">Plant a Tree.<em><br>Change Delaware.</em></h2>
+    <p class="cta-p">Every dollar you donate plants a native tree in a Delaware community. Every tree absorbs carbon, cleans air, and builds a greener tomorrow for the next generation.</p>
+    <div class="cta-btns">
+      <a href="https://www.paypal.com/donate/?hosted_button_id=4GSSM6LXRB96L" target="_blank" class="btn-cta-w">🌱 Donate Now</a>
+      <a href="tel:302-333-1331" class="btn-cta-o">📞 302-333-1331</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div>
+      <img src="deep-roots-logo-color.png" alt="Deep Roots Foundation" class="ft-logo" style="filter:brightness(0) invert(1);opacity:.75"/>
+      <p class="ft-desc">Planting Roots for a Greener Tomorrow. A 501(c)(3) nonprofit based in Hockessin, Delaware — partnered with DNREC and the TEDI Initiative.</p>
+      <div class="ft-social">
+        <a href="https://www.facebook.com/thedeeproots.org" target="_blank" rel="noopener" class="social-icon" title="Facebook">f</a>
+        <a href="https://account.venmo.com/u/DeepRootsFoundation" target="_blank" rel="noopener" class="social-icon" title="Venmo">V</a>
+      </div>
+    </div>
+    <div>
+      <div class="ft-col-t">Explore</div>
+      <div class="ft-col-l">
+        <a href="#why">Why Trees?</a>
+        <a href="#how">How It Works</a>
+        <a href="#events">Our Work</a>
+        <a href="#about">About Us</a>
+      </div>
+    </div>
+    <div>
+      <div class="ft-col-t">Get Involved</div>
+      <div class="ft-col-l">
+        <a href="#donate">Donate</a>
+        <a href="tel:302-333-1331">Volunteer</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div>
+      <div class="ft-col-t">Contact</div>
+      <div class="ft-col-l">
+        <a href="tel:302-333-1331">302-333-1331</a>
+        <a href="https://www.facebook.com/thedeeproots.org" target="_blank" rel="noopener">Facebook Page</a>
+        <a href="https://account.venmo.com/u/DeepRootsFoundation" target="_blank">@DeepRootsFoundation</a>
+        <a href="https://www.paypal.com/donate/?hosted_button_id=4GSSM6LXRB96L" target="_blank">PayPal Donate</a>
+        <a href="https://delawareyes.org/student-leaders" target="_blank">Delaware YES Summit</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <p>© 2024–2026 Deep Roots Foundation. Registered 501(c)(3). Founded Earth Day 2024. Hockessin, Delaware. <span class="ht">♥</span> Founded by Dhruv Pratapagiri.</p>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>60),{passive:true});
+document.getElementById('ham').onclick=()=>{document.getElementById('mob').classList.add('on');document.body.style.overflow='hidden'};
+document.getElementById('mobx').onclick=cM;
+function cM(){document.getElementById('mob').classList.remove('on');document.body.style.overflow=''}
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+function countUp(el,target,dur=1800){
+  if(target===0){el.textContent='0';return}
+  let s=0,step=target/(dur/16);
+  const t=setInterval(()=>{
+    s=Math.min(s+step,target);
+    el.textContent=Math.floor(s)+'+';
+    if(s>=target)clearInterval(t);
+  },16);
+}
+const co=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){countUp(e.target,+e.target.dataset.count);co.unobserve(e.target)}
+}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+
+document.querySelectorAll('.fq').forEach(q=>{
+  q.onclick=()=>{
+    const it=q.parentElement,was=it.classList.contains('open');
+    document.querySelectorAll('.fi.open').forEach(i=>i.classList.remove('open'));
+    if(!was)it.classList.add('open');
+  }
+});
+</script>
+</body>
+</html>
