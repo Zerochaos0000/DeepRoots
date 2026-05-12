@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Deep Roots Foundation — Planting Roots for a Greener Tomorrow</title>
-<meta name="description" content="Deep Roots Foundation is a 501(c)(3) nonprofit planting trees. Founded by a high school student, partnered with DNREC and the Tree for Every Delawarean Initiative."/>
+<meta name="description" content="Deep Roots Foundation is a 501(c)(3) nonprofit planting trees. Founded by a high school student, TEDI Partner — Tree for Every Delawarean Initiative."/>
 <link rel="icon" type="image/x-icon" href="dr-favicon.ico"/>
 <link rel="icon" type="image/png" sizes="32x32" href="dr-favicon-32x32.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="dr-apple-touch-icon.png"/>
@@ -192,7 +192,7 @@ h1.hero-h1 em{color:var(--mint);font-style:italic;display:block}
 }
 .sc-logo{height:32px;width:auto;max-width:160px;object-fit:contain;flex-shrink:0;filter:brightness(0) invert(1);opacity:.85}
 .sc-title{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5)}
-.sc-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+.sc-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-bottom:2rem}
 .sc-stat-n{font-family:var(--fd);font-weight:900;font-size:2.8rem;color:var(--mint);line-height:1;letter-spacing:-.02em}
 .sc-stat-l{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:.4rem}
 .sc-divider{height:1px;background:rgba(255,255,255,.08);margin-bottom:1.5rem}
@@ -281,7 +281,7 @@ p.sec-p{font-size:1.02rem;color:var(--body);line-height:1.85;max-width:540px;fon
 #impact h2.sec-h{color:#fff;text-align:center}
 #impact .sec-p{color:rgba(255,255,255,.48);text-align:center;margin:.8rem auto 4rem}
 .impact-nums{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
   background:rgba(255,255,255,.07);border-radius:14px;overflow:hidden;
   margin-bottom:4rem;position:relative;z-index:1;
 }
@@ -483,6 +483,73 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
 .ft-social .social-icon{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.55)}
 .ft-social .social-icon:hover{background:var(--leaf);border-color:var(--leaf);color:#fff}
 
+/* ══════════ GLOBAL PARTNERS ══════════ */
+.partners-intro{text-align:center;max-width:720px;margin:0 auto 4.5rem}
+.partners-intro .sec-p{margin:.8rem auto 0;max-width:100%}
+.partners-tracks{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3.5rem}
+.track-card{
+  background:var(--off);border-radius:20px;
+  border:1.5px solid var(--border);
+  padding:2.4rem 2.6rem;
+  transition:transform .3s var(--es),box-shadow .3s,border-color .3s;
+  position:relative;overflow:hidden;
+}
+.track-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--leaf),var(--sage));
+  border-radius:20px 20px 0 0;
+}
+.track-card.global-card::before{background:linear-gradient(90deg,#e8631a,#f5a623)}
+.track-card:hover{transform:translateY(-6px);box-shadow:0 16px 44px rgba(26,58,26,.1);border-color:var(--leaf)}
+.track-card.global-card:hover{border-color:#e8631a}
+.track-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  padding:.35rem .9rem;border-radius:50px;margin-bottom:1.4rem;
+}
+.track-badge.local{background:var(--foam);color:var(--leaf)}
+.track-badge.global{background:#fff3e8;color:#e8631a}
+.track-title{font-family:var(--fd);font-weight:900;font-size:1.55rem;color:var(--forest);line-height:1.1;margin-bottom:.8rem;letter-spacing:-.02em}
+.track-desc{font-size:.92rem;color:var(--body);line-height:1.78;margin-bottom:1.6rem}
+.track-partners-list{display:flex;flex-direction:column;gap:1rem}
+.tp-item{
+  display:flex;align-items:center;gap:1rem;
+  background:var(--white);border-radius:12px;padding:1rem 1.2rem;
+  border:1px solid var(--border);
+}
+.tp-logo-wrap{
+  width:56px;height:56px;border-radius:10px;
+  background:var(--foam);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;flex-shrink:0;overflow:hidden;
+}
+.tp-info{}
+.tp-name{font-family:var(--fd);font-weight:800;font-size:.92rem;color:var(--forest)}
+.tp-detail{font-size:.78rem;color:var(--muted);margin-top:.15rem}
+/* cert strip */
+.cert-strip{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+}
+.cert-card{
+  background:var(--off);border-radius:16px;
+  border:1.5px solid var(--border);
+  overflow:hidden;
+  transition:transform .3s var(--es),box-shadow .3s;
+  cursor:pointer;
+}
+.cert-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(26,58,26,.1)}
+.cert-img-wrap{
+  position:relative;overflow:hidden;
+  background:var(--foam);
+  aspect-ratio:4/3;
+}
+.cert-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--e)}
+.cert-card:hover .cert-img-wrap img{transform:scale(1.03)}
+.cert-foot{padding:1rem 1.2rem;display:flex;align-items:center;gap:.6rem}
+.cert-foot-ico{font-size:1.1rem}
+.cert-foot-text{font-size:.8rem;color:var(--muted)}
+.cert-foot-text strong{color:var(--forest);font-weight:700;font-size:.84rem}
+
 /* ══════════ RESPONSIVE ══════════ */
 @media(max-width:1024px){
   nav,nav.s{padding:0 1.8rem;height:72px}
@@ -495,6 +562,7 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
   #hero .hero-inner{grid-template-columns:1fr;padding:100px 2rem 4rem;gap:3rem}
   .hero-right{display:none}
   .why-grid,.how-grid,.events-header,.about-grid,.donate-grid,.faq-grid{grid-template-columns:1fr;gap:3rem}
+  .partners-tracks,.cert-strip{grid-template-columns:1fr;gap:1.5rem}
   #contact .wrap>div{grid-template-columns:1fr!important;gap:2rem}
   .impact-nums{grid-template-columns:1fr 1fr}
   .ben-grid{grid-template-columns:1fr 1fr}
@@ -511,7 +579,7 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
   .why-cards,.ben-grid{grid-template-columns:1fr}
   .steps-row{grid-template-columns:1fr}
   .impact-nums{grid-template-columns:1fr 1fr}
-  .events-grid{grid-template-columns:1fr}
+  .events-grid,.cert-strip{grid-template-columns:1fr}
   .cta-btns{flex-direction:column;align-items:center}
   .ft-grid{grid-template-columns:1fr}
   .ft-bot{flex-direction:column;text-align:center}
@@ -533,10 +601,11 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
 <div class="mob" id="mob">
   <button class="mob-x" id="mobx">✕</button>
   <a href="#why" onclick="cM()">Why Trees?</a>
-  <a href="#how" onclick="cM()">How It Works</a>
+  <a href="#partners" onclick="cM()">Partners</a>
   <a href="#events" onclick="cM()">Our Work</a>
   <a href="#about" onclick="cM()">About Us</a>
   <a href="#donate" onclick="cM()">Donate</a>
+  <a href="#contact" onclick="cM()">Contact</a>
   <a href="#contact" onclick="cM()">Contact</a>
   <a href="#donate" onclick="cM()" style="background:var(--leaf);color:#fff;padding:.7rem 2rem;border-radius:50px;font-size:.88rem;font-weight:800;margin-top:.5rem">🌱 Plant a Tree</a>
 </div>
@@ -551,7 +620,7 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#why">Why Trees?</a></li>
-      <li><a href="#how">How It Works</a></li>
+      <li><a href="#partners">Partners</a></li>
       <li><a href="#events">Our Work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#donate">Donate</a></li>
@@ -580,8 +649,7 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
       </div>
       <div class="hero-trust">
         <div class="hero-trust-item"><div class="trust-dot"></div>Registered 501(c)(3)</div>
-        <div class="hero-trust-item"><div class="trust-dot"></div>DNREC Partner</div>
-        <div class="hero-trust-item"><div class="trust-dot"></div>TEDI Initiative</div>
+        <div class="hero-trust-item"><div class="trust-dot"></div>TEDI Partner</div>
         <div class="hero-trust-item"><div class="trust-dot"></div>Delaware Youth Summit</div>
       </div>
     </div>
@@ -604,16 +672,11 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
             <div class="sc-stat-n" data-count="1550">0</div>
             <div class="sc-stat-l">Funds Raised $</div>
           </div>
-          <div>
-            <div class="sc-stat-n">0</div>
-            <div class="sc-stat-l">Trees Lost</div>
-          </div>
         </div>
         <div class="sc-divider"></div>
         <div class="sc-items">
           <div class="sc-item"><div class="sc-item-ico">✅</div>Registered 501(c)(3) Federal Nonprofit</div>
-          <div class="sc-item"><div class="sc-item-ico">🌿</div>DNREC — Delaware Natural Resources Partner</div>
-          <div class="sc-item"><div class="sc-item-ico">🌳</div>Supporting TEDI — Tree for Every Delawarean</div>
+          <div class="sc-item"><div class="sc-item-ico">🌳</div>TEDI Partner — Tree for Every Delawarean Initiative</div>
         </div>
       </div>
     </div>
@@ -627,15 +690,15 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
     <span>Deep Roots Foundation</span><span class="sep">✦</span>
     <span>501(c)(3) Nonprofit · Delaware</span><span class="sep">✦</span>
     <span>115+ Trees Planted</span><span class="sep">✦</span>
-    <span>DNREC Partner</span><span class="sep">✦</span>
-    <span>TEDI Initiative</span><span class="sep">✦</span>
+    <span>TEDI Partner</span><span class="sep">✦</span>
+    <span>Tree for Every Delawarean</span><span class="sep">✦</span>
     <span>Now Collecting at Hockessin Athletic Club</span><span class="sep">✦</span>
     <span>Planting Roots for a Greener Tomorrow</span><span class="sep">✦</span>
     <span>Deep Roots Foundation</span><span class="sep">✦</span>
     <span>501(c)(3) Nonprofit · Delaware</span><span class="sep">✦</span>
     <span>115+ Trees Planted</span><span class="sep">✦</span>
-    <span>DNREC Partner</span><span class="sep">✦</span>
-    <span>TEDI Initiative</span><span class="sep">✦</span>
+    <span>TEDI Partner</span><span class="sep">✦</span>
+    <span>Tree for Every Delawarean</span><span class="sep">✦</span>
     <span>Now Collecting at Hockessin Athletic Club</span><span class="sep">✦</span>
   </div>
 </div>
@@ -677,45 +740,6 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section id="how">
-  <div class="wrap">
-    <div class="how-grid">
-      <div class="r">
-        <div class="eyebrow">How It Works</div>
-        <h2 class="sec-h">From Planning<br><em>to Planting</em></h2>
-      </div>
-      <p class="sec-p r d1">We take a structured, community-driven approach — every tree we plant is carefully selected, properly planted, and monitored to ensure it thrives for decades.</p>
-    </div>
-    <div class="steps-row">
-      <div class="step r">
-        <div class="step-num">1</div>
-        <div class="step-ico">📋</div>
-        <div class="step-t">Planning and Organization</div>
-        <div class="step-d">We identify ideal planting locations with DNREC and local partners, selecting trees best suited to each site's soil and conditions.</div>
-      </div>
-      <div class="step r d1">
-        <div class="step-num">2</div>
-        <div class="step-ico">📚</div>
-        <div class="step-t">Education and Training</div>
-        <div class="step-d">Volunteers are trained on proper planting techniques, tree care, and the ecological importance of each tree we plant.</div>
-      </div>
-      <div class="step r d2">
-        <div class="step-num">3</div>
-        <div class="step-ico">🌳</div>
-        <div class="step-t">Tree Planting Event</div>
-        <div class="step-d">Community members come together to plant trees at designated sites across Delaware — from neighborhoods to public roadsides.</div>
-      </div>
-      <div class="step r d3">
-        <div class="step-num">4</div>
-        <div class="step-ico">🔍</div>
-        <div class="step-t">Maintenance and Monitoring</div>
-        <div class="step-d">We revisit every planting site, monitor tree health, and ensure long-term survival to maximize lasting environmental impact.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- IMPACT -->
 <section id="impact">
   <div class="wrap">
@@ -728,7 +752,6 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
       <div class="imp-n-card r"><div class="imp-big" data-count="215">0</div><div class="imp-lbl">Trees Planted</div></div>
       <div class="imp-n-card r d1"><div class="imp-big" data-count="3">0</div><div class="imp-lbl">Planting Events</div></div>
       <div class="imp-n-card r d2"><div class="imp-big" data-count="1550">0</div><div class="imp-lbl">Funds Raised $</div></div>
-      <div class="imp-n-card r d3"><div class="imp-big">0</div><div class="imp-lbl">Trees Lost</div></div>
     </div>
     <div class="ben-grid">
       <div class="ben r"><div class="ben-ico">💨</div><div class="ben-t">Improves Air Quality</div><div class="ben-d">Trees absorb pollutants and filter particulates out of the air by trapping them on their leaves and bark, creating cleaner air for Delaware communities.</div></div>
@@ -741,7 +764,92 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
   </div>
 </section>
 
+<!-- PARTNERS -->
+<section id="partners" style="background:var(--white)">
+  <div class="wrap">
+    <div class="r" style="text-align:center;margin-bottom:3.5rem">
+      <div class="eyebrow">Global Partners</div>
+      <h2 class="sec-h">Beyond Delaware.<em> Around the World.</em></h2>
+      <p class="sec-p" style="margin:.8rem auto 0;text-align:center;max-width:620px">Deep Roots extends its impact through two certified global reforestation partners — funding verified trees that transform landscapes, support farming families, and restore forests worldwide.</p>
+    </div>
+
+    <div class="partners-tracks r d1">
+      <!-- LOCAL TRACK -->
+      <div class="track-card">
+        <div class="track-badge local">🌿 Local Track — Delaware</div>
+        <div class="track-title">Planting Native Trees<br>Across Delaware</div>
+        <div class="track-desc">We plant native species at hands-on community events and update our trees planted toward the Tree for Every Delawarean Initiative, building greener neighborhoods one tree at a time.</div>
+        <div class="track-partners-list">
+          <div class="tp-item">
+            <div class="tp-logo-wrap">🌳</div>
+            <div class="tp-info">
+              <div class="tp-name">TEDI Initiative</div>
+              <div class="tp-detail">Tree for Every Delawarean — trees counted toward statewide canopy goal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GLOBAL TRACK -->
+      <div class="track-card global-card">
+        <div class="track-badge global">🌍 Global Track — Worldwide</div>
+        <div class="track-title">Certified Reforestation<br>Around the World</div>
+        <div class="track-desc">We extend our impact through two certified global reforestation partners — funding verified trees that transform landscapes, lift farming families out of poverty, and restore forests worldwide.</div>
+        <div class="track-partners-list">
+          <div class="tp-item">
+            <a href="https://trees.org/" target="_blank" rel="noopener" class="tp-logo-wrap" style="background:#1a3a1a;padding:6px;text-decoration:none">
+              <img src="https://trees.org/wp-content/uploads/2022/03/trees-logo-white.png" alt="Trees for the Future" style="width:100%;height:100%;object-fit:contain" onerror="this.parentElement.innerHTML='🌱'"/>
+            </a>
+            <div class="tp-info">
+              <div class="tp-name">Trees for the Future</div>
+              <div class="tp-detail">Forest Garden approach across sub-Saharan Africa</div>
+            </div>
+          </div>
+          <div class="tp-item">
+            <a href="https://onetreeplanted.org/" target="_blank" rel="noopener" class="tp-logo-wrap" style="background:#fff;padding:4px;text-decoration:none">
+              <img src="https://onetreeplanted.org/cdn/shop/files/OTP_Logo_-_Stacked_-_Green.png" alt="One Tree Planted" style="width:100%;height:100%;object-fit:contain" onerror="this.parentElement.innerHTML='🪴'"/>
+            </a>
+            <div class="tp-info">
+              <div class="tp-name">One Tree Planted</div>
+              <div class="tp-detail">Global Impact Fund — full lifecycle reforestation across projects worldwide</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERTIFICATES -->
+    <div class="r d2" style="margin-top:3rem;margin-bottom:1.2rem">
+      <div class="eyebrow">Verified Certificates</div>
+      <h3 style="font-family:var(--fd);font-size:1.25rem;font-weight:800;color:var(--forest);margin-bottom:.4rem">Official proof of our global planting commitments</h3>
+    </div>
+    <div class="cert-strip r d3">
+      <div class="cert-card">
+        <div class="cert-img-wrap">
+          <img src="TREES_Certificate_of_Support_Deep_Roots_4_19_26.jpg" alt="Trees for the Future — Certificate of Support for Deep Roots Community Foundation, 100 trees planted, April 19 2026"
+               onerror="this.closest('.cert-img-wrap').innerHTML='<div style=\'display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:.6rem;padding:2rem;text-align:center\'><div style=\'font-size:3rem\'>🌱</div><div style=\'font-family:var(--fd);font-weight:900;font-size:1.2rem;color:var(--forest)\'>Trees for the Future</div><div style=\'font-size:.82rem;color:var(--muted)\'>Certificate of Support · 100 Trees · April 19, 2026</div></div>'"/>
+        </div>
+        <div class="cert-foot">
+          <div class="cert-foot-ico">🗓️</div>
+          <div class="cert-foot-text"><strong>April 19, 2026</strong> · Deep Roots Community Foundation · Forest Garden Program</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-img-wrap">
+          <img src="certificate_one_tree_planted.jpg" alt="One Tree Planted — Certificate acknowledging Deep Roots donation of $100, April 10 2026"
+               onerror="this.closest('.cert-img-wrap').innerHTML='<div style=\'display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:.6rem;padding:2rem;text-align:center\'><div style=\'font-size:3rem\'>🪴</div><div style=\'font-family:var(--fd);font-weight:900;font-size:1.2rem;color:var(--forest)\'>One Tree Planted</div><div style=\'font-size:.82rem;color:var(--muted)\'>Certificate of Impact · $100 Donated · April 10, 2026</div></div>'"/>
+        </div>
+        <div class="cert-foot">
+          <div class="cert-foot-ico">🗓️</div>
+          <div class="cert-foot-text"><strong>April 10, 2026</strong> · Deep Roots Community Foundation · Global Impact Fund</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- EVENTS -->
+
 <section id="events">
   <div class="wrap">
     <div class="events-header">
@@ -775,7 +883,7 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
         <div class="ev-body">
           <div class="ev-meta"><div class="ev-date">Spring 2025</div><div class="ev-dot"></div><div class="ev-place">Valley Rd, Hockessin</div></div>
           <div class="ev-t">45 Trees on Valley Rd, Hockessin DE</div>
-          <div class="ev-d">Planted 45 trees on Valley Rd, Hockessin DE — a major community planting event with DNREC support along one of Hockessin's main corridors.</div>
+          <div class="ev-d">Planted 45 trees on Valley Rd, Hockessin DE — a major community planting event along one of Hockessin's main corridors, with trees counted toward the TEDI Initiative.</div>
         </div>
       </div>
 
@@ -793,7 +901,7 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
         <div class="ev-body">
           <div class="ev-meta"><div class="ev-date">Spring 2025</div><div class="ev-dot"></div><div class="ev-place">Summit Bridge Rd, DE</div></div>
           <div class="ev-t">50 Trees at Summit Bridge Rd, DE</div>
-          <div class="ev-d">Planted 50 trees at Summit Bridge Rd, DE — our largest single planting event, officially supporting the Tree for Every Delawarean Initiative.</div>
+          <div class="ev-d">Planted 50 trees at Summit Bridge Rd, DE — our largest single planting event, with trees counted toward the Tree for Every Delawarean Initiative.</div>
         </div>
       </div>
 
@@ -821,12 +929,12 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
       <div>
         <div class="quote-block r">
           <div class="qmark">"</div>
-          <p class="qtext">Deep Roots began as a simple idea — I saw the need for action in the face of environmental degradation. What started with 10 trees on Earth Day has grown into a community-wide effort. Every tree we plant proves that young people can drive real, lasting change.</p>
+          <p class="qtext">Deep Roots began as a simple idea — I saw the need for action in the face of environmental degradation. What started with 10 trees on Earth Day in 2024 has grown into a community-wide effort. Every tree we plant proves that young people can drive real, lasting change.</p>
           <div class="qauthor">
             <div class="qa-avatar">🌳</div>
             <div>
               <div class="qa-name">Dhruv Pratapagiri</div>
-              <div class="qa-title">Founder and CEO · Deep Roots Foundation · Tower Hill School in Delaware</div>
+              <div class="qa-title">Founder and CEO · Deep Roots Foundation · Tower Hill School, Delaware</div>
             </div>
           </div>
         </div>
@@ -834,8 +942,7 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
           <div class="cred-label">Credentials & Partnerships</div>
           <div class="cred-list">
             <div class="cred-item"><div class="cred-ico">✅</div>Registered 501(c)(3) Federal Nonprofit</div>
-            <div class="cred-item"><div class="cred-ico">🌿</div>DNREC — Delaware Dept. of Natural Resources Partner</div>
-            <div class="cred-item"><div class="cred-ico">🌳</div>TEDI — Tree for Every Delawarean Initiative Supporter</div>
+            <div class="cred-item"><div class="cred-ico">🌳</div>TEDI Partner — Tree for Every Delawarean Initiative</div>
             <div class="cred-item"><div class="cred-ico">🏆</div>Delaware Youth Environmental Summit — Student Leader</div>
             <div class="cred-item"><div class="cred-ico">🎓</div>Tower Hill School, Wilmington, Delaware</div>
           </div>
@@ -852,7 +959,7 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
           </div>
           <div class="af r d2">
             <div class="af-check">✓</div>
-            <div class="af-text"><strong>Science-driven</strong> — Trees selected with DNREC for maximum ecological impact and long-term survival.</div>
+            <div class="af-text"><strong>Science-driven</strong> — Trees selected for maximum ecological impact and long-term survival.</div>
           </div>
           <div class="af r d3">
             <div class="af-check">✓</div>
@@ -901,10 +1008,10 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
           </a>
         </div>
       </div>
-      <div class="r d2">
+      <div class="r d2" style="margin-top:2.5rem">
         <div class="donate-box">
           <div class="db-t">Donate Today</div>
-          <div class="db-s">Every dollar plants a tree in a Delaware community. Tax-deductible. 100% to impact.</div>
+          <div class="db-s">Every dollar plants a tree in a community. Tax-deductible. 100% to impact.</div>
           <a href="https://www.paypal.com/donate/?hosted_button_id=4GSSM6LXRB96L" target="_blank" class="db-btn">
             <div class="db-btn-ico">💛</div>
             <div><div class="db-btn-name">PayPal</div><div class="db-btn-sub">Secure giving</div></div>
@@ -918,6 +1025,11 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
           <a href="tel:302-333-1331" class="db-btn">
             <div class="db-btn-ico">🤝</div>
             <div><div class="db-btn-name">Partner With Us</div><div class="db-btn-sub">Call 302-333-1331</div></div>
+            <div class="db-btn-arr">→</div>
+          </a>
+          <a href="tel:302-333-1331" class="db-btn">
+            <div class="db-btn-ico">📞</div>
+            <div><div class="db-btn-name">Volunteer With Us</div><div class="db-btn-sub">Join a planting event</div></div>
             <div class="db-btn-arr">→</div>
           </a>
           <p class="db-note">Deep Roots Foundation is a registered 501(c)(3).<br/>All donations are fully tax-deductible.</p>
@@ -945,7 +1057,7 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
 
         <div class="fi"><div class="fq">How can I get involved or volunteer?<div class="fchev">▾</div></div><div class="fa"><div class="fai">Call us at 302-333-1331 to join a planting event! We welcome volunteers of all ages — no experience needed, just enthusiasm for the environment and community. Every pair of hands makes a difference.</div></div></div>
 
-        <div class="fi"><div class="fq">What is the TEDI Initiative?<div class="fchev">▾</div></div><div class="fa"><div class="fai">TEDI stands for Tree for Every Delawarean Initiative — a Delaware state program aiming to dramatically increase tree canopy coverage statewide. Deep Roots Foundation actively supports this goal through our community planting events across Delaware.</div></div></div>
+        <div class="fi"><div class="fq">What is the TEDI Initiative?<div class="fchev">▾</div></div><div class="fa"><div class="fai">TEDI stands for Tree for Every Delawarean Initiative — a Delaware state program aiming to dramatically increase tree canopy coverage statewide. TEDI considers any organization helping meet its tree planting goals a partner. Deep Roots Foundation is proud to be a TEDI partner, contributing trees toward Delaware's statewide canopy goal.</div></div></div>
 
         <div class="fi"><div class="fq">Can my school or organization host a planting event?<div class="fchev">▾</div></div><div class="fa"><div class="fai">Absolutely! We love partnering with schools, PTAs, civic groups, and businesses. We bring the trees, the training, and the team. Call 302-333-1331 to set up a planting event in your community.</div></div></div>
 
@@ -979,17 +1091,10 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
           </div>
         </div>
         <div style="background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:2rem;display:flex;align-items:center;gap:1rem">
-          <div style="font-size:2rem">🌿</div>
-          <div>
-            <div style="font-family:var(--fd);font-weight:800;font-size:1rem;color:var(--forest)">Supporting Tree for Every Delawarean Initiative (TEDI)</div>
-            <div style="font-size:.84rem;color:var(--muted);margin-top:.2rem">Official DNREC partner program</div>
-          </div>
-        </div>
-        <div style="background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:2rem;display:flex;align-items:center;gap:1rem">
           <div style="font-size:2rem">🌳</div>
           <div>
-            <div style="font-family:var(--fd);font-weight:800;font-size:1rem;color:var(--forest)">Delaware Natural Resources & Environmental Control</div>
-            <div style="font-size:.84rem;color:var(--muted);margin-top:.2rem">DNREC Partner Organization</div>
+            <div style="font-family:var(--fd);font-weight:800;font-size:1rem;color:var(--forest)">TEDI Partner — Tree for Every Delawarean</div>
+            <div style="font-size:.84rem;color:var(--muted);margin-top:.2rem">Trees planted counted toward Delaware's statewide canopy goal</div>
           </div>
         </div>
       </div>
@@ -1001,8 +1106,8 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
 <section id="cta">
   <div class="cta-wrap r">
     <div class="cta-eyebrow">Join the Movement</div>
-    <h2 class="cta-h">Plant a Tree.<em><br>Change Delaware.</em></h2>
-    <p class="cta-p">Every dollar you donate plants a tree in a community. Every tree absorbs carbon, cleans air, and builds a greener tomorrow for the next generation.</p>
+    <h2 class="cta-h">Plant a Tree.<em><br>Change the World.</em></h2>
+    <p class="cta-p">Every tree absorbs carbon, cleans air, and builds a greener tomorrow for the next generation.</p>
     <div class="cta-btns">
       <a href="https://www.paypal.com/donate/?hosted_button_id=4GSSM6LXRB96L" target="_blank" class="btn-cta-w">🌱 Donate Now</a>
       <a href="tel:302-333-1331" class="btn-cta-o">📞 302-333-1331</a>
@@ -1015,7 +1120,7 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
   <div class="ft-grid">
     <div>
       <img src="deep-roots-logo-color.png" alt="Deep Roots Foundation" class="ft-logo" style="filter:brightness(0) invert(1);opacity:.75"/>
-      <p class="ft-desc">Planting Roots for a Greener Tomorrow. A 501(c)(3) nonprofit based in Hockessin, Delaware — partnered with DNREC and the TEDI Initiative.</p>
+      <p class="ft-desc">Planting Roots for a Greener Tomorrow. A 501(c)(3) nonprofit based in Hockessin, Delaware — TEDI Partner, Tree for Every Delawarean Initiative.</p>
       <div class="ft-social">
         <a href="https://www.facebook.com/thedeeproots.org" target="_blank" rel="noopener" class="social-icon" title="Facebook">f</a>
         <a href="https://account.venmo.com/u/DeepRootsFoundation" target="_blank" rel="noopener" class="social-icon" title="Venmo">V</a>
@@ -1025,7 +1130,8 @@ footer{background:var(--forest);padding:5rem 4rem 2.5rem}
       <div class="ft-col-t">Explore</div>
       <div class="ft-col-l">
         <a href="#why">Why Trees?</a>
-        <a href="#how">How It Works</a>
+        <a href="#partners">Partners</a>
+        <a href="#partners">Partners</a>
         <a href="#events">Our Work</a>
         <a href="#about">About Us</a>
       </div>
